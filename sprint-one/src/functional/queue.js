@@ -35,9 +35,17 @@ var Queue = function() {
 
     // PSEUDO
     // if storage size is greater then 0
-      // define a variable called val init with the first item in queue
+      // define a variable called itemProp init with the property for first value in queue
+      // define a variable called item init with the first item in queue
       // delete the first item in queue
-      // return val
+      // return item
+
+    if (someInstance.size() > 0) {
+      var itemProp = Object.keys(storage)[0];
+      var item = storage[itemProp];
+      delete storage[itemProp];
+      return item;
+    }
   };
 
   someInstance.size = function() {
