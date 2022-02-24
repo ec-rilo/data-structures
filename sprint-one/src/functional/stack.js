@@ -15,8 +15,7 @@ var Stack = function() {
 
   someInstance.size = function() {
     // return the size of the stack
-
-    // return the number of keys in storage
+    return Object.keys(storage).length;
   };
 
   return someInstance;
