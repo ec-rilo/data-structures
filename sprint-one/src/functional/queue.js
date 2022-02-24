@@ -33,6 +33,8 @@ var Queue = function() {
 
     // PSEUDO
     // return the number of keys in storage
+
+    return Object.keys(storage).length;
   };
 
   return someInstance;
