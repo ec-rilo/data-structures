@@ -15,6 +15,9 @@ var Queue = function() {
     // The size of the queue, incremented it by 1
 
     // add the property 'property' to storage and initialize it with value
+
+    var location = someInstance.size() + 1;
+    storage[location] = value;
   };
 
   someInstance.dequeue = function() {
