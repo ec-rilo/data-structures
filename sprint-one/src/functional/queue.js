@@ -11,13 +11,22 @@ var Queue = function() {
     // adds string to queue
 
     // PSEUDO
-    // define a variable called property init with
-    // The size of the queue, incremented it by 1
+    // if the size of someInstance is 0
+      // add property '1' to storage init with value
 
-    // add the property 'property' to storage and initialize it with value
+    // define a variable called keysArray init with the keys in storage
+    // define a variable called location init with
+    // the last element in storage keys incremented by 1
 
-    var location = someInstance.size() + 1;
-    storage[location] = value;
+    // add the property 'location' to storage and initialize it with value
+    if (someInstance.size() === 0) {
+      storage['1'] = value;
+    } else {
+      var keysArray = Object.keys(storage);
+      var lastKey = Number(keysArray[keysArray.length - 1]);
+      var location = lastKey + 1;
+      storage[location] = value;
+    }
   };
 
   someInstance.dequeue = function() {
