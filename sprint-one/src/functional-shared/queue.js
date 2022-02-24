@@ -17,8 +17,14 @@ var Queue = function() {
 };
 
 var queueMethods = {
-  enqueue: function() {
-
+  enqueue: function(value) {
+    var keys = Object.keys(this.storage);
+    if (keys.length === 0) {
+      this.storage['1'] = value;
+    } else {
+      var newProperty = Number(keys[keys.length - 1]) + 1;
+      this.storage[newProperty] = value;
+    }
   },
   dequeue: function() {
 
