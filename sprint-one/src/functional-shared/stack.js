@@ -16,7 +16,7 @@ var stackMethods = {
   // pop elements from the top of the stack and return the popped element
   },
   size: function() {
-    // return the number of elements in the stack
+    return Object.keys(this.storage).length;
   }
 };
 
