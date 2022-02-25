@@ -14,6 +14,6 @@ class Queue {
   }
 
   size() {
-    // return the size of the data structure
+    return Object.keys(this.storage).length;
   }
 }
