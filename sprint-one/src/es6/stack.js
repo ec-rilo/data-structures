@@ -5,8 +5,11 @@ class Stack {
     this.storage = {};
   }
 
-  push() {
-
+  push(value) {
+    var newLocation;
+    var stackSize = this.size();
+    stackSize === 0 ? newLocation = 1 : newLocation = stackSize + 1;
+    this.storage[newLocation] = value;
   }
 
   pop() {
