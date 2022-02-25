@@ -12,7 +12,14 @@ stackMethods.push = function(value) {
 };
 
 stackMethods.pop = function() {
+  var keys = Object.keys(this.storage);
 
+  if (keys.length > 0) {
+    var lastKey = keys[keys.length - 1];
+    var lastElem = this.storage[lastKey];
+    delete this.storage[lastKey];
+    return lastElem;
+  }
 };
 
 stackMethods.size = function() {
