@@ -13,7 +13,11 @@ class Queue {
   }
 
   dequeue() {
-    // removes the item from the front of the data structure
+    var keys = Object.keys(this.storage);
+    var firstKey = keys[0];
+    var firstElem = this.storage[firstKey];
+    delete this.storage[firstKey];
+    return firstElem;
   }
 
   size() {
