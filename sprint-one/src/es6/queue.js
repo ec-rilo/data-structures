@@ -8,7 +8,7 @@ class Queue {
   enqueue(value) {
     var keys = Object.keys(this.storage);
     var lastKey;
-    keys.length === 0 ? lastKey = 0 : keys[keys.length - 1];
+    keys.length === 0 ? lastKey = 0 : lastKey = keys[keys.length - 1];
     this.storage[Number(lastKey) + 1] = value;
   }
 
