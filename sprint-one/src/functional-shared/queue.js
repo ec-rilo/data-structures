@@ -27,7 +27,12 @@ var queueMethods = {
     }
   },
   dequeue: function() {
-
+    if (this.size() > 0) {
+      var firstElemProp = Object.keys(this.storage)[0];
+      var firstElem = this.storage[firstElemProp];
+      delete this.storage[firstElemProp];
+      return firstElem;
+    }
   },
   size: function() {
     return Object.keys(this.storage).length;
