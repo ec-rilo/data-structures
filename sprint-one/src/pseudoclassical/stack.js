@@ -8,7 +8,11 @@ Stack.prototype.push = function(value) {
 };
 
 Stack.prototype.pop = function() {
-
+  var keys = Object.keys(this.storage);
+  var lastKey = keys[keys.length - 1];
+  var lastElem = this.storage[lastKey];
+  delete this.storage[lastKey];
+  return lastElem;
 };
 
 Stack.prototype.size = function() {
