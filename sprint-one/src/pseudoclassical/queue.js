@@ -13,7 +13,12 @@ Queue.prototype.enqueue = function(value) {
 };
 
 Queue.prototype.dequeue = function() {
-
+  if (this.size !== 0) {
+    var firstProp = Object.keys(this.storage)[0];
+    var firstElem = this.storage[firstProp];
+    delete this.storage[firstProp];
+    return firstElem;
+  }
 };
 
 Queue.prototype.size = function() {
