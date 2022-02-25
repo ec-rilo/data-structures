@@ -6,7 +6,10 @@ class Queue {
   }
 
   enqueue(value) {
-    // add item to the back of the data structure
+    var keys = Object.keys(this.storage);
+    var lastKey;
+    keys.length === 0 ? lastKey = 0 : keys[keys.length - 1];
+    this.storage[Number(lastKey) + 1] = value;
   }
 
   dequeue() {
