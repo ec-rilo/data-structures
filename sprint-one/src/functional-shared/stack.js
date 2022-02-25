@@ -10,7 +10,8 @@ var Stack = function() {
 
 var stackMethods = {
   push: function(value) {
-  // push elemnts to the top of the stack
+    var numOfKeys = Object.keys(this.storage).length;
+    this.storage[numOfKeys + 1] = value;
   },
   pop: function() {
   // pop elements from the top of the stack and return the popped element
