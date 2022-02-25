@@ -17,7 +17,10 @@ queueMethods.enqueue = function(value) {
 };
 
 queueMethods.dequeue = function() {
-  // remove elements from front of queue
+  var keys = Object.keys(this.storage);
+  var firstElem = this.storage[keys[0]];
+  delete this.storage[keys[0]];
+  return firstElem;
 };
 
 queueMethods.size = function() {
