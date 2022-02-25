@@ -14,7 +14,13 @@ var stackMethods = {
     this.storage[numOfKeys + 1] = value;
   },
   pop: function() {
-  // pop elements from the top of the stack and return the popped element
+    var keys = Object.keys(this.storage);
+    if (keys.length > 0) {
+      var lastProp = keys[keys.length - 1];
+      var lastElem = this.storage[lastProp];
+      delete this.storage[lastProp];
+      return lastElem;
+    }
   },
   size: function() {
     return Object.keys(this.storage).length;
