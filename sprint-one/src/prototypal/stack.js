@@ -6,8 +6,9 @@ var Stack = function() {
 
 var stackMethods = {};
 
-stackMethods.push = function() {
-
+stackMethods.push = function(value) {
+  var numOfKeys = Object.keys(this.storage).length;
+  this.storage[numOfKeys + 1] = value;
 };
 
 stackMethods.pop = function() {
