@@ -13,7 +13,14 @@ class Stack {
   }
 
   pop() {
-
+    var stackSize = this.size();
+    if (stackSize !== 0) {
+      var keys = Object.keys(this.storage);
+      var lastKey = keys[keys.length - 1];
+      var lastElem = this.storage[lastKey];
+      delete this.storage[lastKey];
+      return lastElem;
+    }
   }
 
   size() {
